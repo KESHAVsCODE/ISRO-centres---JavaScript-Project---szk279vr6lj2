@@ -65,7 +65,7 @@ h1 {
 h2 {
   font-size: 1.5rem;
   font-weight: 500;
-  background-color: #df9926;
+  background-color: hsl(37, 74%, 51%);
 }
 h3 {
   font-size: 1.375rem;
@@ -105,7 +105,7 @@ i {
 }
 
 button {
-  background-color: #df9926;
+  background-color: hsl(37, 74%, 51%);
   font-weight: bold;
   border: none;
   border-radius: 1.5rem;
@@ -116,23 +116,38 @@ button {
 }
 button:hover {
   /* background-color: #157dc2db; */
-  background-color: #007aff;
+  background-color: hsl(211, 100%, 50%);
   box-shadow: 2px 2px 25px white;
 }
-button:focus {
+.active {
   background: hsl(203, 92%, 30%);
   transform: scale(0.95);
   box-shadow: none;
 }
 main {
   margin: 1rem;
-  border: 1px solid #df9926;
+  border: 1px solid hsl(37, 74%, 51%);
   text-align: start;
 }
-.grid {
+.centers-info {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
 }
+/* background-color: hsl(231, 94%, 14%); */
+#center-details > div:nth-child(odd) {
+  background: hsl(240, 94%, 25%);
+}
+/* .centers-info {
+  display: flex;
+}
+
+.centers-info > :first-child {
+  flex-basis: 50%;
+}
+.centers-info > :nth-child(2),
+.centers-info > :nth-child(3) {
+  flex-basis: 25%;
+} */
 
 /* for responsive design */
 @media (max-width: 550px) {
