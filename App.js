@@ -50,12 +50,12 @@ function searchCenters() {
   detailContainer.innerHTML = "";
 
   if (!activeBtn) {
-    detailContainer.textContent = "!. . . . Please Select A Category . . .!";
+    detailContainer.innerHTML = `<p class="error">Please select a category</p>`;
     return;
   }
 
   if (!inputKey) {
-    detailContainer.textContent = `!. . . . Please Enter Valid ${activeBtn.id} . . .!`;
+    detailContainer.innerHTML = `<p class="error">Please enter a ${activeBtn.id} name </p>`;
     return;
   }
 
@@ -80,7 +80,7 @@ function searchCenters() {
   }
 
   if (!fragment.childElementCount) {
-    detailContainer.textContent = `!. . . . Please Enter Valid ${activeBtn.id.toUpperCase()} . . .!`;
+    detailContainer.innerHTML = `<p class="error">Please enter a valid ${activeBtn.id} name </p>`;
     return;
   }
 
@@ -106,3 +106,9 @@ stateBtn.addEventListener("click", activate);
 centerBtn.addEventListener("click", activate);
 
 searchIcon.addEventListener("click", searchCenters);
+
+input.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    searchCenters();
+  }
+});

@@ -69,9 +69,18 @@ h2 {
 }
 h3 {
   font-size: 1.375rem;
-  background-color: hsl(231, 94%, 10%);
   font-weight: 800;
+  background-color: hsl(231, 94%, 10%);
+  color: hsl(49, 94%, 63%);
 }
+.error {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: hsl(54, 100%, 56%);
+
+  text-align: center;
+}
+
 .flex {
   display: flex;
   align-items: center;
@@ -90,6 +99,7 @@ input {
   text-align: center;
   padding-right: 40px;
 }
+
 input::placeholder {
   font-family: "Times New Roman", Times, serif;
   color: #999;
@@ -120,7 +130,7 @@ button:hover {
   box-shadow: 2px 2px 25px white;
 }
 .active {
-  background: hsl(203, 92%, 30%);
+  background-color: hsl(203, 92%, 30%);
   transform: scale(0.95);
   box-shadow: none;
 }
@@ -170,4 +180,22 @@ main {
   .flex {
     gap: 0.5rem;
   }
+}
+
+.ripple {
+  border-radius: 50%;
+  background-position: center;
+  transition: background 0.8s;
+}
+.ripple:hover {
+  background-color: white;
+  background-image: radial-gradient(circle, transparent 1%, white 1%);
+
+  background-position: center;
+  background-size: 15000%;
+}
+.ripple:active {
+  transition: background 0s;
+  background-color: rgba(0, 0, 0, 0.1);
+  background-size: 100%;
 }
