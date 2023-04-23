@@ -55,7 +55,7 @@ function searchCenters() {
   detailContainer.innerHTML = "";
 
   if (!activeBtn) {
-    detailContainer.innerHTML = `<p class="error">Please select a category</p>`;
+    detailContainer.innerHTML = `<p class="error">Please select a search category</p>`;
     return;
   }
 
