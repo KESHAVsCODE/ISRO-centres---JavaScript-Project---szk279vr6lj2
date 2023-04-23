@@ -190,7 +190,7 @@ main {
 .ripple:hover {
   background-color: white;
   background-image: radial-gradient(circle, transparent 1%, white 1%);
-
+  border-radius: 50%;
   background-position: center;
   background-size: 15000%;
 }

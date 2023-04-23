@@ -47,15 +47,15 @@ function searchCenters() {
   const inputKey = input.value.toLowerCase();
   //console.log(inputKey);
 
+  if (!inputKey) {
+    //detailContainer.innerHTML = `<p class="error">Please enter a ${activeBtn.id} name </p>`;
+    return;
+  }
+
   detailContainer.innerHTML = "";
 
   if (!activeBtn) {
     detailContainer.innerHTML = `<p class="error">Please select a category</p>`;
-    return;
-  }
-
-  if (!inputKey) {
-    detailContainer.innerHTML = `<p class="error">Please enter a ${activeBtn.id} name </p>`;
     return;
   }
 
@@ -107,8 +107,7 @@ centerBtn.addEventListener("click", activate);
 
 searchIcon.addEventListener("click", searchCenters);
 
-input.addEventListener("keypress", function (event) {
-  if (event.key === "Enter") {
-    searchCenters();
-  }
+input.addEventListener("keyup", function (event) {
+  if (event.key === "Enter") searchCenters();
+  if (input.value === "") printISROCentersData();
 });
