@@ -44,7 +44,8 @@ async function printISROCentersData() {
 getISROCentersData();
 
 function searchCenters() {
-  const inputKey = input.value.toLowerCase();
+  const inputKey = input.value.trim().toLowerCase();
+
   //console.log(inputKey);
 
   if (!inputKey) {
