@@ -1,5 +1,5 @@
 const detailContainer = document.getElementById("center-details");
-const input = document.querySelector("input");
+const input = document.getElementById("input-category");
 const cityBtn = document.getElementById("city");
 const stateBtn = document.getElementById("state");
 const centerBtn = document.getElementById("center");
@@ -46,7 +46,7 @@ getISROCentersData();
 function searchCenters() {
   const inputKey = input.value.trim().toLowerCase();
 
-  //console.log(inputKey);
+  console.log(inputKey);
 
   if (!inputKey) {
     //detailContainer.innerHTML = `<p class="error">Please enter a ${activeBtn.id} name </p>`;
