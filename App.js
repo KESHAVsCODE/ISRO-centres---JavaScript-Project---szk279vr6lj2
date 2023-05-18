@@ -1,5 +1,5 @@
 const detailContainer = document.getElementById("center-details");
-const input = document.querySelector("input");
+const input = document.getElementById("input-category");
 const cityBtn = document.getElementById("city");
 const stateBtn = document.getElementById("state");
 const centerBtn = document.getElementById("center");
