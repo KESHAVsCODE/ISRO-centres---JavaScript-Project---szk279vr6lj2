@@ -46,7 +46,7 @@ getISROCentersData();
 function searchCenters() {
   const inputKey = input.value.trim().toLowerCase();
 
-  //console.log(inputKey);
+  console.log(inputKey);
 
   if (!inputKey) {
     //detailContainer.innerHTML = `<p class="error">Please enter a ${activeBtn.id} name </p>`;
