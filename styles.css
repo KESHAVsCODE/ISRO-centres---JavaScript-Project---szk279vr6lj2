@@ -51,7 +51,6 @@ h2,
 h3,
 input,
 i {
-  overflow-wrap: break-word;
   padding: 10px;
 }
 
@@ -83,20 +82,21 @@ h3 {
 .flex {
   display: flex;
   align-items: center;
-  justify-items: center;
   gap: 1rem;
   padding: 16px;
 }
-.search {
+
+.search-box {
   width: 50%;
   color: black;
   position: relative;
 }
+
 input {
   border: none;
   width: 100%;
-  text-align: center;
   padding-right: 40px;
+  text-align: center;
 }
 
 input::placeholder {
@@ -146,17 +146,6 @@ main {
 #center-details > div:nth-child(odd) {
   background: hsl(240, 94%, 25%);
 }
-/* .centers-info {
-  display: flex;
-}
-
-.centers-info > :first-child {
-  flex-basis: 50%;
-}
-.centers-info > :nth-child(2),
-.centers-info > :nth-child(3) {
-  flex-basis: 25%;
-} */
 
 /* for responsive design */
 @media (max-width: 550px) {
@@ -181,6 +170,7 @@ main {
   }
 }
 
+/* search animation */
 .ripple {
   border-radius: 50%;
   background-position: center;
@@ -197,4 +187,31 @@ main {
   transition: background 0s;
   background-color: rgba(0, 0, 0, 0.1);
   background-size: 100%;
+}
+
+/* loading animation */
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid white;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.center-loading {
+  display: grid;
+  place-content: center;
+  padding: 2rem;
 }

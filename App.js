@@ -25,7 +25,6 @@ async function getISROCentersData() {
 async function printISROCentersData() {
   detailContainer.innerHTML = "";
   const fragment = document.createDocumentFragment();
-
   for (const center of centersData.centres) {
     const parent = document.createElement("div");
     parent.classList.add("centers-info");
@@ -63,8 +62,6 @@ function searchCenters() {
   let finderKey = activeBtn.name;
   const fragment = document.createDocumentFragment();
 
-  //console.log(finderKey);
-
   for (const center of centersData.centres) {
     if (center[finderKey].toLowerCase().includes(inputKey)) {
       const parent = document.createElement("div");
@@ -90,16 +87,15 @@ function searchCenters() {
 
 function activate(event) {
   event.target.classList.toggle("active");
+
   if (activeBtn && event.target.id === activeBtn.id) {
     activeBtn = null;
     printISROCentersData();
-    //console.log(activeBtn);
     return;
   }
   if (activeBtn) activeBtn.classList.toggle("active");
 
   activeBtn = event.target;
-  //console.log(activeBtn);
 }
 
 cityBtn.addEventListener("click", activate);
@@ -109,6 +105,12 @@ centerBtn.addEventListener("click", activate);
 searchIcon.addEventListener("click", searchCenters);
 
 input.addEventListener("keyup", function (event) {
-  if (event.key === "Enter") searchCenters();
-  if (input.value === "") printISROCentersData();
+  if (event.key === "Enter") {
+    searchCenters();
+    return;
+  }
+  if (input.value === "") {
+    printISROCentersData();
+    return;
+  }
 });
